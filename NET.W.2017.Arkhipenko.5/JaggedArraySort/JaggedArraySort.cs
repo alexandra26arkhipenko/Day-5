@@ -4,8 +4,16 @@ using System.Net;
 
 namespace JaggedArraySort
 {
+    /// <summary>
+    /// Class JaggedArraySort is bubble sort algorithm for jagged array 
+    /// </summary>
     public class JaggedArraySort
     {
+        /// <summary>
+        /// Method BubbleSortUp sorts array by bubble method in ascending order
+        /// </summary>
+        /// <param name="arrayForSort"></param>
+        /// <returns></returns>
         private static int[] BubbleSortUp(int[] arrayForSort)
         {
             for (int j = 0; j < arrayForSort.Length; j++)
@@ -23,7 +31,11 @@ namespace JaggedArraySort
             }
             return arrayForSort;
         }
-
+        /// <summary>
+        /// Method BubbleSortDown sorts an array by bubble method in descending order
+        /// </summary>
+        /// <param name="arrayForSort"></param>
+        /// <returns></returns>
         private static int[] BubbleSortDown(int[] arrayForSort)
         {
             for (int j = 0; j < arrayForSort.Length; j++)
@@ -42,6 +54,12 @@ namespace JaggedArraySort
             return arrayForSort;
         }
 
+        /// <summary>
+        /// Method FindSum finds sum of the elements of the string
+        /// </summary>
+        /// <param name="jaggedArray"></param>
+        /// <param name="colums"></param>
+        /// <returns></returns>
         private static int[] FindSum(int[][] jaggedArray, int colums)
         {
             int[] supportArray = new int[colums];
@@ -58,6 +76,10 @@ namespace JaggedArraySort
             return supportArray;
         }
 
+        
+
+
+
         public static int[] BubbleSortForJaggedArrayUpSum(int[][] jaggedArray, int colums)
         {
             return BubbleSortUp(FindSum(jaggedArray, colums));
@@ -67,7 +89,12 @@ namespace JaggedArraySort
         {
             return BubbleSortDown(FindSum(jaggedArray, colums));
         }
-
+        /// <summary>
+        /// Method FindMax finds max value of the elements of the string
+        /// </summary>
+        /// <param name="jaggedArray"></param>
+        /// <param name="colums"></param>
+        /// <returns></returns>
         private static int[] FindMax(int[][] jaggedArray, int colums)
         {
             int[] supportArray = new int[colums];
@@ -88,6 +115,7 @@ namespace JaggedArraySort
             return supportArray;
         }
 
+
         public static int[] BubbleSortForJaggedArrayUpMax(int[][] jaggedArray, int colums)
         {
             return BubbleSortUp(FindMax(jaggedArray, colums));
@@ -97,7 +125,12 @@ namespace JaggedArraySort
         {
             return BubbleSortDown(FindMax(jaggedArray, colums));
         }
-
+        /// <summary>
+        /// Method FindMin finds min value of the elements of the string
+        /// </summary>
+        /// <param name="jaggedArray"></param>
+        /// <param name="colums"></param>
+        /// <returns></returns>
         private static int[] FindMin(int[][] jaggedArray, int colums)
         {
             int[] supportArray = new int[colums];

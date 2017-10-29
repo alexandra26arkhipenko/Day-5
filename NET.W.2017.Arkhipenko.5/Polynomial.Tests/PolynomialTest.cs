@@ -28,6 +28,8 @@ namespace Polynomial.Tests
             Assert.AreEqual((pol1 + pol2).ToString(), "F(x) = 106x^5+17x^4+10x^3+7x^2+9x^1");
             Assert.AreEqual((pol1 - pol2).ToString(), "F(x) = 88x^5+3x^4+0x^3+-1x^2+7x^1");
             Assert.AreEqual((pol1 * pol2).ToString(), "F(x) = 873x^5+70x^4+25x^3+12x^2+8x^1");
+            Assert.IsFalse(pol1==pol2);
+            Assert.IsTrue(pol1!=pol2);
         }
 
 

@@ -78,24 +78,23 @@ namespace Polynomial
             return Coefficients.Length;
         }
 
-        //public static bool operator ==(Polynomial pol1, Polynomial pol2)
-        //{
-        //    if (pol1 == null || pol2 == null)
-        //    {
-        //        throw new ArgumentNullException();
-        //    }
-        //    return pol1.Equals(pol2);
-        //}
+       public static bool operator ==(Polynomial pol1, Polynomial pol2)
+       {
+           if (pol1 == null || pol2 == null)
+           {
+               throw new ArgumentNullException();
+           }
+           return pol1.Equals(pol2);
+       }
 
-        //public static bool operator !=(Polynomial pol1, Polynomial pol2)
-        //{
-
-        //    if (pol1 == null || pol2 == null)
-        //    {
-        //        throw new ArgumentNullException();
-        //    }
-        //    return !(pol1.Equals(pol2));
-        //} 
+       public static bool operator !=(Polynomial pol1, Polynomial pol2)
+       {
+          if (pol1 == null || pol2 == null)
+          {
+              throw new ArgumentNullException();
+          }
+          return !(pol1.Equals(pol2));
+       } 
 
         /// <summary>
         /// Overloaded method +

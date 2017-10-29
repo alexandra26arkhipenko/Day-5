@@ -1,24 +1,31 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Polynomial
 {
+    /// <summary>
+    /// class Polynomial for working with polynomials of degree n from one variable of double type.
+    /// </summary>
     public class Polynomial
     {
+        //Coefficients of polynomial
         private readonly Double[] coefficients;
-        
+        //Prorerty
         public double[] Coefficients
         {
             get { return coefficients; }
         }
-
-       
-
+        //Constructor
         public Polynomial( double [] coefficients)
         {
             this.coefficients = coefficients;
         }
 
+        /// <summary>
+        /// Override method ToString
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string polynomialToString = "F(x) = ";
@@ -30,6 +37,11 @@ namespace Polynomial
             return polynomialToString + Coefficients[0] +"x^1";
         }
 
+        /// <summary>
+        /// Override method Equals compares 2 polynomials
+        /// </summary>
+        /// <param name="pol"></param>
+        /// <returns></returns>
         public override bool Equals(object pol)
         {
             Polynomial coef = (Polynomial)pol;
@@ -66,21 +78,31 @@ namespace Polynomial
             return Coefficients.Length;
         }
 
-        public static bool operator ==(Polynomial pol1, Polynomial pol2)
-        {
-            
-            return pol1.Equals(pol2);
-        }
+        //public static bool operator ==(Polynomial pol1, Polynomial pol2)
+        //{
+        //    if (pol1 == null || pol2 == null)
+        //    {
+        //        throw new ArgumentNullException();
+        //    }
+        //    return pol1.Equals(pol2);
+        //}
 
-        public static bool operator !=(Polynomial pol1, Polynomial pol2)
-        {
-            if (pol1.Equals(pol2))
-            {
-                return false;
-            }
-            return true;
-        }
+        //public static bool operator !=(Polynomial pol1, Polynomial pol2)
+        //{
 
+        //    if (pol1 == null || pol2 == null)
+        //    {
+        //        throw new ArgumentNullException();
+        //    }
+        //    return !(pol1.Equals(pol2));
+        //} 
+
+        /// <summary>
+        /// Overloaded method +
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="pol2"></param>
+        /// <returns></returns>
         public static Polynomial operator +(Polynomial pol1, Polynomial pol2)
         {
             double[] sumCoef = new double[Math.Max(pol1.Coefficients.Length, pol2.Coefficients.Length)];
@@ -122,6 +144,13 @@ namespace Polynomial
             return polSum;
         }
 
+
+        /// <summary>
+        /// Overloaded method -
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="pol2"></param>
+        /// <returns></returns>
         public static Polynomial operator -(Polynomial pol1, Polynomial pol2)
         {
             double[] subCoef = new double[Math.Max(pol1.Coefficients.Length, pol2.Coefficients.Length)];
@@ -163,7 +192,12 @@ namespace Polynomial
             return polSum;
         }
 
-
+        /// <summary>
+        /// Overloaded method *
+        /// </summary>
+        /// <param name="pol1"></param>
+        /// <param name="pol2"></param>
+        /// <returns></returns>
         public static Polynomial operator *(Polynomial pol1, Polynomial pol2)
         {
             double[] mulCoef = new double[Math.Max(pol1.Coefficients.Length, pol2.Coefficients.Length)];
@@ -204,5 +238,7 @@ namespace Polynomial
             Polynomial polSum = new Polynomial(mulCoef);
             return polSum;
         }
+
+        
     }
 }

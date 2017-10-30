@@ -9,19 +9,25 @@ namespace Polynomial
     /// </summary>
     public class Polynomial
     {
-        //Coefficients of polynomial
+        #region private fields
         private readonly Double[] coefficients;
-        //Prorerty
+        #endregion
+
+        #region propreties
         public double[] Coefficients
         {
             get { return coefficients; }
         }
-        //Constructor
+        #endregion
+
+        #region  public
+        
         public Polynomial( double [] coefficients)
         {
             this.coefficients = coefficients;
         }
 
+        #region override 
         /// <summary>
         /// Override method ToString
         /// </summary>
@@ -77,25 +83,29 @@ namespace Polynomial
         {
             return Coefficients.Length;
         }
+        #endregion
 
-       public static bool operator ==(Polynomial pol1, Polynomial pol2)
-       {
-           if (pol1 == null || pol2 == null)
+        #region == and !=
+        public static bool operator ==(Polynomial pol1, Polynomial pol2)
+        {
+           if (ReferenceEquals(pol1, null) || ReferenceEquals(pol2, null))
            {
                throw new ArgumentNullException();
            }
            return pol1.Equals(pol2);
-       }
+        }
 
-       public static bool operator !=(Polynomial pol1, Polynomial pol2)
-       {
-          if (pol1 == null || pol2 == null)
-          {
-              throw new ArgumentNullException();
-          }
-          return !(pol1.Equals(pol2));
-       } 
+        public static bool operator !=(Polynomial pol1, Polynomial pol2)
+        {
+           if (ReferenceEquals(pol1, null) || ReferenceEquals(pol2, null))
+           {
+               throw new ArgumentNullException();
+           }
+           return !(pol1 == pol2);
+        }
+        #endregion
 
+        #region +, -, *
         /// <summary>
         /// Overloaded method +
         /// </summary>
@@ -142,7 +152,6 @@ namespace Polynomial
             Polynomial polSum = new Polynomial(sumCoef);
             return polSum;
         }
-
 
         /// <summary>
         /// Overloaded method -
@@ -238,6 +247,9 @@ namespace Polynomial
             return polSum;
         }
 
-        
+        #endregion
+
+        #endregion
+
     }
 }

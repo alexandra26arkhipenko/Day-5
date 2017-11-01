@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Polynomial
@@ -51,11 +52,9 @@ namespace Polynomial
         public override bool Equals(object pol)
         {
             Polynomial coef = (Polynomial)pol;
-            
-            if  (coef == null)
-            {
-                throw new ArgumentNullException();
-            }
+
+            if (ReferenceEquals(coef, null)) return false;
+            if (ReferenceEquals(this, coef)) return true;
 
             if (Coefficients.Length != coef.Coefficients.Length)
             {
@@ -88,20 +87,18 @@ namespace Polynomial
         #region == and !=
         public static bool operator ==(Polynomial pol1, Polynomial pol2)
         {
-           if (ReferenceEquals(pol1, null) || ReferenceEquals(pol2, null))
-           {
-               throw new ArgumentNullException();
-           }
+            if (ReferenceEquals(pol1, null)) return false;
+            if (ReferenceEquals(pol1, pol2)) return true;
+
            return pol1.Equals(pol2);
         }
 
         public static bool operator !=(Polynomial pol1, Polynomial pol2)
         {
-           if (ReferenceEquals(pol1, null) || ReferenceEquals(pol2, null))
-           {
-               throw new ArgumentNullException();
-           }
-           return !(pol1 == pol2);
+            if (ReferenceEquals(pol1, null)) return false;
+            if (ReferenceEquals(pol1, pol2)) return true;
+
+            return !(pol1 == pol2);
         }
         #endregion
 

@@ -18,6 +18,7 @@ namespace JaggedArraySort.Tests
             arrayTest[2] = new int[] {5, 10, 16};
             arrayTest[3] = new int[] {18, 1, 5, 6, 8};
            
+            
             CollectionAssert.AreEqual(JaggedArraySort.BubbleSortForJaggedArrayUpSum(arrayTest, colums), new int[]{23, 30, 31, 38 });
             CollectionAssert.AreEqual(JaggedArraySort.BubbleSortForJaggedArrayDownSum(arrayTest, colums), new int[] { 38, 31, 30, 23 });
             CollectionAssert.AreEqual(JaggedArraySort.BubbleSortForJaggedArrayUpMax(arrayTest, colums), new int[] { 12, 16, 18, 20});

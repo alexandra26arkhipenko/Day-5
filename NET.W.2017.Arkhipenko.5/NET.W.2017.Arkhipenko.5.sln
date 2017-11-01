@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polynomial", "Polynomial\Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polynomial.Tests", "Polynomial.Tests\Polynomial.Tests.csproj", "{A18F9DC0-3036-4512-B6B5-AE5545A1FA77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArraySortInt", "JaggedArraySortInt\JaggedArraySortInt.csproj", "{49A5638C-FDF9-4829-9679-8BF467FEAEEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArraySortInt.Tests", "JaggedArraySortInt.Tests\JaggedArraySortInt.Tests.csproj", "{A533AAAA-FC18-442C-B5C9-548BE5D4576B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{A18F9DC0-3036-4512-B6B5-AE5545A1FA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A18F9DC0-3036-4512-B6B5-AE5545A1FA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A18F9DC0-3036-4512-B6B5-AE5545A1FA77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A5638C-FDF9-4829-9679-8BF467FEAEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A5638C-FDF9-4829-9679-8BF467FEAEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A5638C-FDF9-4829-9679-8BF467FEAEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A5638C-FDF9-4829-9679-8BF467FEAEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A533AAAA-FC18-442C-B5C9-548BE5D4576B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A533AAAA-FC18-442C-B5C9-548BE5D4576B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A533AAAA-FC18-442C-B5C9-548BE5D4576B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A533AAAA-FC18-442C-B5C9-548BE5D4576B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

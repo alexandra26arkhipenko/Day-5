@@ -7,7 +7,7 @@ using JaggedArraySortInt;
 
 namespace JaggedArraySortInt.Tests
 {
-    public class DecreasingSumSort : IComparer
+    public class DecreasingSumSort : IComparer<int[]>
     {
         public int Compare(int[] array1, int[] array2)
         {

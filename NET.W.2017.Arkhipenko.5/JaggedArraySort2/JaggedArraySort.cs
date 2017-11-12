@@ -1,25 +1,18 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace JaggedArraySort1
+namespace JaggedArraySort2
 {
-
-    public static class JaggedArraySort
+    public class JaggedArraySort
     {
-        #region public
         /// <summary>
         /// static method BubbleSort is sorting jagged array  
         /// </summary>
         /// <param name="jaggedArray"></param>
         /// <param name="comparer"></param>
         /// <returns>Sorted jagged array</returns>
-        public static int[][] Sort(int[][] jaggedArray, IComparer<int[]> comparer) =>
-            BubbleSort(jaggedArray, comparer.Compare);
-#endregion
-
-        #region private
-        private static int[][] BubbleSort(int[][] jaggedArray, Comparison<int[]> comparer)
+        private static int[][] BubbleSort(int[][] jaggedArray, IComparer<int[]> comparer)
         {
             if (ReferenceEquals(jaggedArray, null))
                 throw new ArgumentNullException(nameof(jaggedArray));
@@ -32,7 +25,7 @@ namespace JaggedArraySort1
             {
                 for (int j = 0; j < jaggedArray.Length - 1; j++)
                 {
-                    if (comparer(jaggedArray[j], jaggedArray[j + 1]) > 0)
+                    if (comparer.Compare(jaggedArray[j], jaggedArray[j + 1]) > 0)
                     {
                         Swap(ref jaggedArray[j], ref jaggedArray[j + 1]);
                     }
@@ -41,6 +34,10 @@ namespace JaggedArraySort1
             return jaggedArray;
         }
 
+        public static int[][] Sort(int[][] jaggedArray, Comparison<int[]> comparer) =>
+            BubbleSort(jaggedArray, new Formater(comparer));
+        
+
 
 
         /// <summary>
@@ -48,14 +45,12 @@ namespace JaggedArraySort1
         /// </summary>
         /// <param name="lhs"></param>
         /// <param name="rhs"></param>
-        private static void Swap(ref int[] lhs, ref int[] rhs)
+        public static void Swap(ref int[] lhs, ref int[] rhs)
         {
             var temp = lhs;
             lhs = rhs;
             rhs = temp;
         }
-#endregion
     }
 
-  
 }

@@ -54,6 +54,7 @@
     <Compile Include="DecreasingMaxSort.cs" />
     <Compile Include="DecreasingMinSort.cs" />
     <Compile Include="DecreasingSumSort.cs" />
+    <Compile Include="JaggedArraySort2Test.cs" />
     <Compile Include="JaggedArraySortTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,9 +62,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JaggedArraySortInt\JaggedArraySortInt.csproj">
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JaggedArraySortInt\JaggedArraySort1.csproj">
       <Project>{49a5638c-fdf9-4829-9679-8bf467feaeef}</Project>
-      <Name>JaggedArraySortInt</Name>
+      <Name>JaggedArraySort1</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

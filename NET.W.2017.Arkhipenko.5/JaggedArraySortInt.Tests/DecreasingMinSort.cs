@@ -1,8 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace JaggedArraySortInt.Tests
 {
-    public class DecreasingMinSort : IComparer
+    public class DecreasingMinSort : IComparer<int[]>
     {
         public int Compare(int[] array1, int[] array2)
         {

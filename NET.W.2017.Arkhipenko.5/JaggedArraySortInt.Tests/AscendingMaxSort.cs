@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using JaggedArraySortInt;
 
 
 namespace JaggedArraySortInt.Tests
 {
-    public class AscendingMaxSort : IComparer
+    public class AscendingMaxSort : IComparer<int[]>
     {
         public int Compare(int[] array1, int[] array2)
         {

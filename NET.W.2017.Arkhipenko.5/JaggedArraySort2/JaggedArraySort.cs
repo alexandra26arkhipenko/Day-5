@@ -6,12 +6,18 @@ namespace JaggedArraySort2
 {
     public class JaggedArraySort
     {
+        #region public
         /// <summary>
-        /// static method BubbleSort is sorting jagged array  
+        /// Sort is sorting jagged array
         /// </summary>
         /// <param name="jaggedArray"></param>
         /// <param name="comparer"></param>
-        /// <returns>Sorted jagged array</returns>
+        /// <returns></returns>
+        public static int[][] Sort(int[][] jaggedArray, Comparison<int[]> comparer) =>
+            BubbleSort(jaggedArray, new Formater(comparer));
+        #endregion
+
+        #region private
         private static int[][] BubbleSort(int[][] jaggedArray, IComparer<int[]> comparer)
         {
             if (ReferenceEquals(jaggedArray, null))
@@ -34,23 +40,18 @@ namespace JaggedArraySort2
             return jaggedArray;
         }
 
-        public static int[][] Sort(int[][] jaggedArray, Comparison<int[]> comparer) =>
-            BubbleSort(jaggedArray, new Formater(comparer));
-        
-
-
-
         /// <summary>
         /// method Swap swaps two rows of an array
         /// </summary>
         /// <param name="lhs"></param>
         /// <param name="rhs"></param>
-        public static void Swap(ref int[] lhs, ref int[] rhs)
+        private static void Swap(ref int[] lhs, ref int[] rhs)
         {
             var temp = lhs;
             lhs = rhs;
             rhs = temp;
         }
+#endregion
     }
 
 }

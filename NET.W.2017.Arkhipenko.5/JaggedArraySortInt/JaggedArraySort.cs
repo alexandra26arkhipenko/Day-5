@@ -8,15 +8,16 @@ namespace JaggedArraySort1
     public static class JaggedArraySort
     {
         #region public
-        /// <summary>
-        /// static method BubbleSort is sorting jagged array  
-        /// </summary>
-        /// <param name="jaggedArray"></param>
-        /// <param name="comparer"></param>
-        /// <returns>Sorted jagged array</returns>
+       /// <summary>
+       /// Sort is sorting jagged array
+       /// </summary>
+       /// <param name="jaggedArray"></param>
+       /// <param name="comparer"></param>
+       /// <returns>Sorting jagged array</returns>
         public static int[][] Sort(int[][] jaggedArray, IComparer<int[]> comparer) =>
             BubbleSort(jaggedArray, comparer.Compare);
 #endregion
+
 
         #region private
         private static int[][] BubbleSort(int[][] jaggedArray, Comparison<int[]> comparer)

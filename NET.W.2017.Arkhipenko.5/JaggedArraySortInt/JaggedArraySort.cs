@@ -18,9 +18,8 @@ namespace JaggedArraySort1
             BubbleSort(jaggedArray, comparer.Compare);
 #endregion
 
-
         #region private
-        private static int[][] BubbleSort(int[][] jaggedArray, Comparison<int[]> comparer)
+        public static int[][] BubbleSort(int[][] jaggedArray, Comparison<int[]> comparer)
         {
             if (ReferenceEquals(jaggedArray, null))
                 throw new ArgumentNullException(nameof(jaggedArray));
